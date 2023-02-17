@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import ClientProvider from "../components/ClientProvider";
 import Login from "../components/Login";
 import { SessionProvider } from "../components/SessionProvider";
 import Sidebar from "../components/Sidebar";
@@ -18,8 +19,9 @@ export default async function RootLayout({
           {!session ? (
             <Login />
           ) : (
-            <div className="flex">
+            <div className="flex overflow-x-hidden">
               <Sidebar />
+              <ClientProvider />
               <div className="bg-[#343541] flex-1">{children}</div>
             </div>
           )}

@@ -19,7 +19,7 @@ export default function ChatLink({ id }: Props) {
   const { data: session } = useSession();
   const [active, setActive] = useState(false);
 
-  const [messages, loading] = useCollection(
+  const [messages] = useCollection(
     collection(db, "users", session?.user?.email!, "chats", id, "messages")
   );
 
@@ -40,16 +40,14 @@ export default function ChatLink({ id }: Props) {
         active && "bg-gray-700/50"
       } border flex items-center justify-between rounded-lg px-5 py-3 text-sm 
       gap-4 cursor-pointer transition-all duration-200 ease-out hover:bg-gray-700`}>
-      <div className="flex items-center gap-4">
-        <ChatBubbleLeftIcon className="w-5 h-5 text-white" />
-        <p className="text-white">
-          {messages?.docs[messages?.docs.length - 1]?.data().text || "New Chat"}
-        </p>
-      </div>
+      <ChatBubbleLeftIcon className="w-5 h-5 text-white" />
+      <p className="text-white flex-1 hidden md:inline-flex truncate">
+        {messages?.docs[messages?.docs.length - 1]?.data().text || "New Chat"}
+      </p>
 
       <TrashIcon
         onClick={removeChat}
-        className="w-5 h-5 text-white hover:text-red-500"
+        className="w-7 h-7 text-white hover:bg-red-500 p-1 rounded-md"
       />
     </Link>
   );

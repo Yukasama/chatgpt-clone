@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[#434654];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[#11A37F];
+}
+
 @layer components {
   .infoText {
     @apply p-4 bg-gray-700/50 rounded-lg max-w-[300px]
