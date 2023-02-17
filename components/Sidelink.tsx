@@ -25,10 +25,10 @@ export default function Sidelink({ title, icon }: Props) {
   return (
     <div
       onClick={createNewChat}
-      className="border-gray-600 border flex items-center rounded-lg px-5 py-3 text-sm 
-      gap-4 cursor-pointer transition-all duration-200 ease-out hover:bg-gray-800">
+      className="border-gray-600 border flex justify-center items-center rounded-lg px-5 py-3 text-sm 
+      gap-2 cursor-pointer transition-all duration-200 ease-out hover:bg-gray-700">
       <i className="w-5 h-5 text-white">{icon}</i>
-      <p className="text-white">{title}</p>
+      <p className="text-white mr-2">{title}</p>
     </div>
   );
 }
