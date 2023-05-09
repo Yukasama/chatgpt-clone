@@ -9,6 +9,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@heroicons/react": "^2.0.15",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.11.9",
     "firebase": "^9.17.1",
     "firebase-admin": "^11.5.0",
